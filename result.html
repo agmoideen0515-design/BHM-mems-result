@@ -29,7 +29,15 @@
     <div id="res"></div>
     <div class="btns">
         <a href="index.html" class="btn" style="background: #6c757d;">Back</a>
-        <button onclick="window.location.href='#'; window.print(); return false;" class="btn" style="background: #28a745;">Print</button>
+      <button onclick="
+  var pwin = window.open('', '_blank'); 
+  pwin.document.write(document.documentElement.outerHTML); 
+  pwin.document.close(); 
+  setTimeout(function(){ 
+    pwin.focus(); 
+    pwin.print(); 
+  }, 500);
+" class="btn" style="background: #28a745;">Print</button>  
     </div>
 </div>
 <script>
